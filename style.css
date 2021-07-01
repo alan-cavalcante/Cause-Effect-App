@@ -17,10 +17,9 @@
 }
 
 body {
-    background-color: var(--Verde1);
     display: grid;
-    grid-template-columns: 20% auto 20%;
-    grid-template-rows: 10% auto 3%;
+    grid-template-columns: 30% auto 30%;
+    grid-template-rows: 100px auto 30px;
     height: 100vh;
     grid-template-areas: 
         "header header header"
@@ -31,25 +30,115 @@ body {
 header {
     grid-area: header;
     background-color: var(--Amarelo1);
+    display: flex;
+    flex-direction: column;
+    min-height: 10vh;
+    padding: 20px;
+}
+
+h1, h3 {
+    margin: 0px;
+    padding: 0px;
 }
 
 main {
     grid-area: main;
-    background-color: var(--Verde2);
     display: grid;
-    grid-template-columns: 20% auto;
+    grid-template-columns: fit-content(100%) 1fr;
     grid-template-areas: 
     "containerlist containerinfo containerinfo";
 }
 
 #containerlist {
     grid-area: containerlist;
+    background-color: wheat;
+    min-width: 10vw;
+    padding: 10px 5px 10px 10px;
+}
+
+#lista {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 330px;
+    height: 100%;
     background-color: white;
+    padding: 10px 5px;
+}
+
+.listitems {
+    background-color: var(--Laranja2);
+    color: wheat;
+    padding: 20px 20px;
+    font-weight: 500;
+    border-radius: 10px;
+    margin: 5px;
+}
+
+.listitems:hover {
+    background-color: var(--Laranja1);
 }
 
 #containerinfo {
     grid-area: containerinfo;
     background-color: wheat;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    
+}
+
+/* #containerfoto {
+    background-color: white;
+    width: fit-content;
+    max-width: 50vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 50%;
+    padding: 10px;
+    margin: 5px;
+} */
+
+#containerquadro {
+    background-color: white;
+    width: 100%;
+    max-width: 60vw; /*Mudar para 60vw no MediaQuery 500*/
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border-radius: 50px 50px 10px 10px;
+    box-shadow: 5px 5px 10px rgba(0,0,0,.2) ;
+}
+
+.display {
+    background-color: var(--Laranja2);
+    height: 50px;
+    margin: 5px;
+    color: white;
+    font: bold;
+    font-size: 1.2em;
+    text-align: left;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#foto {
+    background-color: green;
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+    overflow: hidden;
+    align-self: center;
+    margin: 20px;
+}
+
+#foto img {
+    width:100%;
+    vertical-align:middle;
 }
 
 
